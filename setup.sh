@@ -107,3 +107,7 @@ append_once "neofetch" ~/.bashrc
 gsettings set org.gnome.desktop.background picture-uri ''
 gsettings set org.gnome.desktop.background primary-color 'rgb(66, 81, 100)'
 gsettings set org.gnome.desktop.screensaver lock-enabled false
+
+wget -O .conkyrc https://raw.githubusercontent.com/nullfocus/linux_setup/master/conky.conf 
+mkdir -p ~/.config/neofetch/
+wget -O ./config/neofetch/neofetch.conf https://raw.githubusercontent.com/nullfocus/linux_setup/master/neofetch.conf

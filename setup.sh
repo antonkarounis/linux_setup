@@ -82,6 +82,7 @@ function append_once {
     FILE=$2
     grep -qF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
 }
+
 apt_install curl
 install_chrome
 apt_install git
@@ -105,9 +106,6 @@ append_once "alias python=python3" ~/.bashrc
 append_once "alias pip=pip3" ~/.bashrc
 append_once "neofetch" ~/.bashrc
 
-#dropbox
-#docker
-
-
 gsettings set org.gnome.desktop.background picture-uri ''
 gsettings set org.gnome.desktop.background primary-color 'rgb(66, 81, 100)'
+gsettings set org.gnome.desktop.screensaver lock-enabled false

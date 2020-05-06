@@ -110,4 +110,4 @@ gsettings set org.gnome.desktop.screensaver lock-enabled false
 
 wget -O .conkyrc https://raw.githubusercontent.com/nullfocus/linux_setup/master/conky.conf 
 mkdir -p ~/.config/neofetch/
-wget -O ./config/neofetch/neofetch.conf https://raw.githubusercontent.com/nullfocus/linux_setup/master/neofetch.conf
+wget -O ~/config/neofetch/neofetch.conf https://raw.githubusercontent.com/nullfocus/linux_setup/master/neofetch.conf

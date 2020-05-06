@@ -97,6 +97,7 @@ snap_install termius-app
 apt_install vlc
 apt_install conky
 apt_install neofetch
+apt_install net-tools
 
 ssh-keygen -t rsa -N "" -f ssh.key
 
@@ -108,6 +109,11 @@ gsettings set org.gnome.desktop.background picture-uri ''
 gsettings set org.gnome.desktop.background primary-color 'rgb(66, 81, 100)'
 gsettings set org.gnome.desktop.screensaver lock-enabled false
 
-wget -O .conkyrc https://raw.githubusercontent.com/nullfocus/linux_setup/master/conky.conf 
+mkdir -p ~/.config/conky/
+wget -O ~/.config/conky/config.conf https://raw.githubusercontent.com/nullfocus/linux_setup/master/conky.conf 
+
+mkdir -p ~/.config/autostart/
+wget -O ~~/.config/autostart/conky.desktop https://raw.githubusercontent.com/nullfocus/linux_setup/master/conky.desktop 
+
 mkdir -p ~/.config/neofetch/
 wget -O ~/config/neofetch/neofetch.conf https://raw.githubusercontent.com/nullfocus/linux_setup/master/neofetch.conf

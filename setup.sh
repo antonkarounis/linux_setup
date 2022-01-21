@@ -103,6 +103,19 @@ function install_neofetch {
     wget -O ~/config/neofetch/neofetch.conf https://raw.githubusercontent.com/nullfocus/linux_setup/master/neofetch.conf
 }
 
+function install_dotnetcore {
+    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
+    sudo dpkg -i packages-microsoft-prod.deb
+
+    rm packages-microsoft-prod.deb
+
+    sudo apt-get update; \
+        sudo apt-get install -y apt-transport-https && \
+        sudo apt-get update && \
+        sudo apt-get install -y dotnet-sdk-6.0
+
+}
 
 #system tools
 apt_install tlp tlp-rdw
@@ -112,6 +125,7 @@ apt_install curl
 #cool linux stuff
 install_conky
 install_neofetch
+
 #common apps
 install_chrome
 apt_install vlc
@@ -122,7 +136,6 @@ git config --global user.email "nullfocus@gmail.com"
 git config --global user.name "Antony Karounis"
 
 snap_install code
-snap_install beekeeper-studio
 
 #languages and frameworks
 apt_install python3
@@ -130,6 +143,8 @@ apt_install python3-pip
 install_npm
 install_java8
 install_clojure
+install_dotnetcore
+
 
 #for github
 generate_sshkey

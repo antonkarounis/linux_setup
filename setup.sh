@@ -117,6 +117,16 @@ function install_dotnetcore {
 
 }
 
+function install_golang {
+    wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz
+    
+    rm -rf /usr/local/go
+    
+    tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz    
+    
+    append_once "export PATH=$PATH:/usr/local/go/bin" ~/.bashrc
+}
+
 #system tools
 apt_install tlp tlp-rdw
 apt_install net-tools
@@ -144,6 +154,7 @@ install_npm
 install_java8
 install_clojure
 install_dotnetcore
+install_golang
 
 
 #for github

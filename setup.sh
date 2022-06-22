@@ -135,12 +135,12 @@ function install_docker {
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     
     sudo apt update
+        
+    sudo apt install -y docker-ce
     
-    apt-cache policy docker-ce
+    sudo usermod -aG docker ${USER}
     
-    sudo apt install docker-ce
-    
-    sudo usermod -aG docker ${USER}    
+    sudo chmod 666 /var/run/docker.sock
 }
 
 #system tools

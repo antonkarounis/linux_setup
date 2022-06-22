@@ -120,11 +120,27 @@ function install_dotnetcore {
 function install_golang {
     wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz
     
-    rm -rf /usr/local/go
+    sudo rm -rf /usr/local/go
     
-    tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz    
+    sudo tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz    
     
     append_once "export PATH=$PATH:/usr/local/go/bin" ~/.bashrc
+}
+
+function install_docker {
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    
+    sudo apt update
+    
+    apt-cache policy docker-ce
+    
+    sudo apt install docker-ce
+    
+    sudo usermod -aG docker ${USER}    
 }
 
 #system tools
@@ -155,7 +171,7 @@ install_java8
 install_clojure
 install_dotnetcore
 install_golang
-
+install_docker
 
 #for github
 generate_sshkey

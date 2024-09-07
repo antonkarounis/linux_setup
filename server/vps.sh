@@ -43,5 +43,8 @@ sudo apt install nginx
 # 2. setup let's encrypt here: https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
 # 3. set up reverse proxy here: https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04
 
+# ---- github ----
 
+#complains about locally stored token, find better way
+docker login ghcr.io -u USER_NAME
 

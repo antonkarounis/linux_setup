@@ -33,8 +33,6 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 
-# ---- end -----
-
 # ---- install nginx -----
 
 sudo apt install nginx

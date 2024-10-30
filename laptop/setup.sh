@@ -14,7 +14,7 @@ gsettings set org.gnome.desktop.interface clock-show-weekday true
 
 # all dependencies here
 
-sudo apt install -y curl wget tlp tlp-rdw net-tools vlc ca-certificates gnupg2 gpg apt-transport-https
+sudo apt install -y make curl wget tlp tlp-rdw net-tools vlc ca-certificates gnupg2 gpg apt-transport-https
 
 # git
 

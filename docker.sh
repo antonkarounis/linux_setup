@@ -3,9 +3,7 @@
 # ---- install docker ----- 
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
-sudo apt-get update
 sudo apt install -y wget curl ca-certificates
-
 
 # Add Docker's official GPG key:
 sudo install -m 0755 -d /etc/apt/keyrings

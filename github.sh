@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt_install git
+sudo apt install -y git
 
 ssh-keygen -t ed25519 -C "nullfocus@gmail.com"  -N "" -f ~/.ssh/github.key
 eval "$(ssh-agent -s)"

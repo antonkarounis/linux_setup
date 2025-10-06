@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 sudo apt install -y wget curl ca-certificates
 

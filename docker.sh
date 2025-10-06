@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # ---- install docker ----- 
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository

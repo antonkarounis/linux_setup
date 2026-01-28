@@ -12,3 +12,15 @@ rm -f packages.microsoft.gpg
 
 sudo apt update
 sudo apt install -y code
+
+# Disable GitHub Copilot completely
+code --uninstall-extension GitHub.copilot 2>/dev/null || true
+code --uninstall-extension GitHub.copilot-chat 2>/dev/null || true
+
+# Disable Copilot via settings
+mkdir -p ~/.config/Code/User
+cat > ~/.config/Code/User/settings.json << 'EOF'
+{
+    "chat.disableAIFeatures": true
+}
+EOF
